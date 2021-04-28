@@ -39,14 +39,6 @@ def remove(result):
 
 if __name__ == "__main__":
 
-    try:
-        with open('data.json', 'r') as openfile:
-          data = json.load(openfile)
-    except Exception as e:
-        print('''\n   No JSON file present...
-        Try Calling Pull method.
-        ''')
-
     print('''
     Menu...
 
@@ -61,6 +53,15 @@ if __name__ == "__main__":
     output = None
 
     while int(choice):
+
+        try:
+            with open('data.json', 'r') as openfile:
+              data = json.load(openfile)
+        except Exception as e:
+            print('''\n   No JSON file present...
+            Try Calling Pull method.
+            ''')
+
         choice = input('\n  Enter your Choice : ')
 
         if choice == '1':

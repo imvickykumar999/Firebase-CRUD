@@ -4,7 +4,7 @@
 
 # ==============================================
 
-from imvickykumar999 import firebase
+from vicksbase import firebase
 
 firebase_obj = firebase.FirebaseApplication('https://led-blink-wifi-default-rtdb.firebaseio.com/', None)
 

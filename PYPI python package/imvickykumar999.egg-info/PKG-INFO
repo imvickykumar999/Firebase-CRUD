@@ -1,0 +1,60 @@
+Metadata-Version: 1.0
+Name: imvickykumar999
+Version: 0.0.4
+Summary: Website : https://github.com/imvickykumar999/Firebase-CRUD
+Home-page: https://imvickykumar999.herokuapp.com/news
+Author: Vicky Kumar
+Author-email: UNKNOWN
+License: MIT
+Description: # Firebase-CRUD
+          Home Automation using my firebase package and kivy Android App, finally display output on my website.
+        
+        ## Create new file in cmd
+          type nul > led.py
+        
+        ## crud.py
+        
+            from imvickykumar999 import firebase
+        
+            firebase_obj = firebase.FirebaseApplication('https://your_project_name.firebaseio.com/', None)
+        
+            # update data
+            firebase_obj.put('/parant/','child', data)
+        
+            # fetch data
+            result = firebase_obj.get('/parent/child', None)
+            print (result)
+        
+        ![image](https://user-images.githubusercontent.com/50515418/116424009-cd519480-a85e-11eb-943f-e566d49bad09.png)
+        
+        ## CMD...
+        
+            C:\Users\Vicky\Desktop\Repository\firebase\Firebase-CRUD>python
+            Python 3.7.9 (tags/v3.7.9:13c94747c7, Aug 17 2020, 16:30:00) [MSC v.1900 64 bit (AMD64)] on win32
+            Type "help", "copyright", "credits" or "license" for more information.
+            >>>
+            >>> import crud as f
+        
+            >>> f.push({"Cost": 250, "Name": "LED 1", "Switch": "ON", "Value": 1})
+            'updated'
+            >>> f.pull()
+            ('Value fetched = ', {'Cost': 250, 'Name': 'LED 1', 'Switch': 'ON', 'Value': 1})
+        
+            >>> f.push({"Cost": 250, "Name": "LED 1", "Switch": "ON", "Value": 1}, fan)
+            Traceback (most recent call last):
+              File "<stdin>", line 1, in <module>
+            NameError: name 'fan' is not defined
+        
+            >>> f.push({"Cost": 250, "Name": "Fan", "Switch": "ON", "Value": 1}, 'fan')
+            'updated'
+            >>> f.pull('fan')
+            ('Value fetched = ', {'Cost': 250, 'Name': 'Fan', 'Switch': 'ON', 'Value': 1})
+        
+            >>> f.push({"Cost": 250, "Name": "LED", "Switch": "OFF", "Value": 0})
+            'updated'
+            >>> f.pull()
+            ('Value fetched = ', {'Cost': 250, 'Name': 'LED', 'Switch': 'OFF', 'Value': 0})
+            >>>
+        
+Keywords: Firebase,Playfair Cipher,GitHub Uploader,Morse,Vector,python package,function and class,3D line,3D plane,angle b/w planes or line,distance bw point and plane
+Platform: UNKNOWN

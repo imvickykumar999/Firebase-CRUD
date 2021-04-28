@@ -46,4 +46,17 @@
     'updated'
     >>> f.pull()
     ('Value fetched = ', {'Cost': 250, 'Name': 'LED', 'Switch': 'OFF', 'Value': 0})
+    
+    >>> c.insert()
+    {'name': '-MZPZc4g5Aq_tqp7Z15x'}
+    >>> c.remove()
+    (('Value fetched = ', {'fan': {'Name': 'Fan', 'Switch': 'OFF'}}), '...is present')
+    >>> c.pull()
+    ('Value fetched = ', None)
+    >>> c.insert()
+    {'name': '-MZPZoeNKI0vWr2ZhX4Q'}
+    >>> c.push()
+    'updated'
+    >>> c.remove()
+    (('Value fetched = ', {'fan': {'Name': 'Fan', 'Switch': 'OFF'}}), '...is present')
     >>>

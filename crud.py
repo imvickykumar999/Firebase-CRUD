@@ -12,7 +12,7 @@ try:
 except Exception as e:
     print(e)
 
-firebase_obj = firebase.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
+firebase_obj = f.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
 
 def push(data, child = 'led'):
     firebase_obj.put('esp32/switch', child, data)
@@ -31,7 +31,7 @@ def insert(data = 'hello', child = 'switch/led'):
 
 def remove(child = 'led'):
     data = firebase_obj.delete('esp32/switch', child)
-    return (data, 'deleted')
+    return (pull(child = '/'), '...is present')
 
 # def switch(argument):
 #     switcher = {

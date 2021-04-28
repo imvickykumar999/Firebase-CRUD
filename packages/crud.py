@@ -6,7 +6,7 @@
 
 from vicksbase import firebase as f
 # import json, os
-#
+
 # try:
 #     os.mkdir('json')
 # except Exception as e:
@@ -30,8 +30,8 @@ def insert(data = 'hello', child = 'switch/led'):
     return (result)
 
 def remove(child = 'led'):
-    firebase_obj.delete('esp32/switch', child)
-    return (pull(child), 'deleted')
+    data = firebase_obj.delete('esp32/switch', child)
+    return (pull(child = '/'), '...is present')
 
 # remove('fan')
 

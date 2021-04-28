@@ -14,7 +14,8 @@ from vicksbase import firebase as f
 
 firebase_obj = f.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
 
-def push(data, child = 'led'):
+def push(data = {"Name": "LED", "Switch": "ON", "Value": 1},
+         child = 'led'):
     firebase_obj.put('esp32/switch', child, data)
     return ('updated')
 
@@ -33,7 +34,11 @@ def remove(child = 'led'):
     data = firebase_obj.delete('esp32/switch', child)
     return (pull(child = '/'), '...is present')
 
-# remove('fan')
+# print(push())
+# print(push({"Name": "Fan", "Switch": "ON", "Value": 1}, child = 'fan'))
+# print(remove())
+# print(pull('fan/Value'))
+
 
 # def switch(argument):
 #     switcher = {

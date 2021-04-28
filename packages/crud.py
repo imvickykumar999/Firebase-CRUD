@@ -4,15 +4,15 @@
 
 # My Home Automation Project : https://console.firebase.google.com/u/0/project/home-automation-336c0/database/home-automation-336c0-default-rtdb/data/~2F
 
-from imvickykumar999 import firebase
-import json, os
+from vicksbase import firebase as f
+# import json, os
+#
+# try:
+#     os.mkdir('json')
+# except Exception as e:
+#     print(e)
 
-try:
-    os.mkdir('json')
-except Exception as e:
-    print(e)
-
-firebase_obj = firebase.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
+firebase_obj = f.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
 
 def push(data, child = 'led'):
     firebase_obj.put('esp32/switch', child, data)
@@ -21,8 +21,8 @@ def push(data, child = 'led'):
 def pull(child = 'led'):
     result = firebase_obj.get(f'esp32/switch/{child}', None)
 
-    with open(f"json/{child}.json", "w") as outfile:
-        json.dump(result, outfile)
+    # with open(f"json/{child}.json", "w") as outfile:
+    #     json.dump(result, outfile)
     return ('Value fetched = ', result)
 
 def insert(data = 'hello', child = 'switch/led'):
@@ -30,8 +30,10 @@ def insert(data = 'hello', child = 'switch/led'):
     return (result)
 
 def remove(child = 'led'):
-    data = firebase_obj.delete('esp32/switch', child)
-    return (data, 'deleted')
+    firebase_obj.delete('esp32/switch', child)
+    return (pull(child), 'deleted')
+
+# remove('fan')
 
 # def switch(argument):
 #     switcher = {

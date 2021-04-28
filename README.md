@@ -7,6 +7,96 @@
     0
     >>>
 
+# [GitHub Uploader](https://pypi.org/project/imvickykumar999/)
+
+        C:\Users\Vicky\Desktop\Repository\firebase\package pip>python
+        Python 3.7.9 (tags/v3.7.9:13c94747c7, Aug 17 2020, 16:30:00) [MSC v.1900 64 bit (AMD64)] on win32
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>>
+        >>> from vicksuploader import github as g
+
+        Welcome to my website ;)  https://imvickykumar999.herokuapp.com/iotcar
+
+        Use help(module name) function to know available functions in it.
+        >>> g.upload()
+
+        1). git init
+        Initialized empty Git repository in C:/Users/Vicky/Desktop/Repository/firebase/package pip/.git/
+
+        2). git add .
+        warning: LF will be replaced by CRLF in PYPI python package/vicksbase/__init__.py.
+        The file will have its original line endings in your working directory
+        warning: LF will be replaced by CRLF in PYPI python package/vicksbase/async_fb.py.
+        The file will have its original line endings in your working directory
+        warning: LF will be replaced by CRLF in PYPI python package/vicksbase/decorators.py.
+        The file will have its original line endings in your working directory
+        warning: LF will be replaced by CRLF in PYPI python package/vicksbase/firebase.py.
+        The file will have its original line endings in your working directory
+        warning: LF will be replaced by CRLF in PYPI python package/vicksbase/firebase_token_generator.py.
+        The file will have its original line endings in your working directory
+        warning: LF will be replaced by CRLF in PYPI python package/vicksbase/jsonutil.py.
+        The file will have its original line endings in your working directory
+        warning: LF will be replaced by CRLF in PYPI python package/vicksbase/lazy.py.
+        The file will have its original line endings in your working directory
+
+        Enter each file name seperated by space (or, Press ENTER to Upload All...) :
+
+        3). git commit -m "Adding files"
+        [master (root-commit) dbc472d] Adding files
+         25 files changed, 1965 insertions(+)
+         create mode 100644 .gitignore
+         create mode 100644 LICENSE
+         create mode 100644 PYPI python package/License.txt
+         create mode 100644 PYPI python package/MANIFEST.in
+         create mode 100644 PYPI python package/README.md
+         create mode 100644 PYPI python package/RUNME.py
+         create mode 100644 PYPI python package/multivicks/__init__.py
+         create mode 100644 PYPI python package/multivicks/github.py
+         create mode 100644 PYPI python package/multivicks/morse.py
+         create mode 100644 PYPI python package/multivicks/playfair.py
+         create mode 100644 PYPI python package/multivicks/pypi.py
+         create mode 100644 PYPI python package/multivicks/vixtor.py
+         create mode 100644 PYPI python package/packaging.txt
+         create mode 100644 PYPI python package/requirements.txt
+         create mode 100644 PYPI python package/setup.py
+         create mode 100644 PYPI python package/vicksbase/__init__.py
+         create mode 100644 PYPI python package/vicksbase/async_fb.py
+         create mode 100644 PYPI python package/vicksbase/decorators.py
+         create mode 100644 PYPI python package/vicksbase/firebase.py
+         create mode 100644 PYPI python package/vicksbase/firebase_token_generator.py
+         create mode 100644 PYPI python package/vicksbase/jsonutil.py
+         create mode 100644 PYPI python package/vicksbase/lazy.py
+         create mode 100644 README.md
+         create mode 100644 index.html
+         create mode 100644 screenshot.png
+
+        4). git remote add origin https://github.com/...
+        Enter the github Username : imvickykumar999
+        Enter Existing Repository : Firebase-CRUD
+
+        5). git pull origin master
+        fatal: couldn't find remote ref master
+
+        6). git push origin master
+        Logon failed, use ctrl+c to cancel basic credential prompt.
+        Username for 'https://github.com': imvickykumar999
+        Password for 'https://imvickykumar999@github.com':
+        Enumerating objects: 30, done.
+        Counting objects: 100% (30/30), done.
+        Delta compression using up to 8 threads
+        Compressing objects: 100% (28/28), done.
+        Writing objects: 100% (30/30), 159.99 KiB | 5.71 MiB/s, done.
+        Total 30 (delta 0), reused 0 (delta 0), pack-reused 0
+        remote:
+        remote: Create a pull request for 'master' on GitHub by visiting:
+        remote:      https://github.com/imvickykumar999/Firebase-CRUD/pull/new/master
+        remote:
+        To https://github.com/imvickykumar999/Firebase-CRUD.git
+         * [new branch]      master -> master
+        Uploaded Successfully
+        >>>
+
+
 # >>> [PYPI Uploader](https://github.com/imvickykumar999/100th-Repository-Morsetor-python-Package/tree/main/PYPI%20python%20package)
 
     >>> import vixuploader as vix

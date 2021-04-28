@@ -1,5 +1,7 @@
 # https://www.c-sharpcorner.com/article/firebase-crud-operations-using-python/
 
+# https://console.firebase.google.com/u/0/project/home-automation-336c0/database/home-automation-336c0-default-rtdb/data/~2F
+
 from imvickykumar999 import firebase
 import json
 

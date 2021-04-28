@@ -4,7 +4,7 @@
 ## Create new file in cmd
   type nul > led.py
 
-## Code...
+## crud.py
 
     from imvickykumar999 import firebase
 
@@ -18,3 +18,32 @@
     print (result)
 
 [![image](https://user-images.githubusercontent.com/50515418/116424009-cd519480-a85e-11eb-943f-e566d49bad09.png)](https://github.com/imvickykumar999/Firebase-CRUD/blob/bdeb5b7a0b703b2f86719ee2da0d06505ee00ceb/main.py#L16)
+
+## CMD...
+
+    C:\Users\Vicky\Desktop\Repository\firebase\Firebase-CRUD>python
+    Python 3.7.9 (tags/v3.7.9:13c94747c7, Aug 17 2020, 16:30:00) [MSC v.1900 64 bit (AMD64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>> import crud as f
+
+    >>> f.push({"Cost": 250, "Name": "LED 1", "Switch": "ON", "Value": 1})
+    'updated'
+    >>> f.pull()
+    ('Value fetched = ', {'Cost': 250, 'Name': 'LED 1', 'Switch': 'ON', 'Value': 1})
+
+    >>> f.push({"Cost": 250, "Name": "LED 1", "Switch": "ON", "Value": 1}, fan)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    NameError: name 'fan' is not defined
+
+    >>> f.push({"Cost": 250, "Name": "Fan", "Switch": "ON", "Value": 1}, 'fan')
+    'updated'
+    >>> f.pull('fan')
+    ('Value fetched = ', {'Cost': 250, 'Name': 'Fan', 'Switch': 'ON', 'Value': 1})
+
+    >>> f.push({"Cost": 250, "Name": "LED", "Switch": "OFF", "Value": 0})
+    'updated'
+    >>> f.pull()
+    ('Value fetched = ', {'Cost': 250, 'Name': 'LED', 'Switch': 'OFF', 'Value': 0})
+    >>>

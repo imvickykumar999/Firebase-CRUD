@@ -7,25 +7,24 @@ import json
 
 firebase_obj = firebase.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
 
-def pull():
-    result = firebase_obj.get('/esp32/switch/led/', None)
+def push(data, child = 'led'):
+    firebase_obj.put('esp32/switch', child, data)
+    return ('updated')
 
-    with open("data.json", "w") as outfile:
+def pull(child = 'led'):
+    result = firebase_obj.get(f'esp32/switch/{child}', None)
+
+    with open(f"{child}.json", "w") as outfile:
         json.dump(result, outfile)
+    return ('Value fetched = ', result)
 
-    print('Value fetched = ', result)
+def insert(data, child = 'led'):
+    result = firebase_obj.post(f'esp32/switch/{child}', data)
+    return (result)
 
-def push(data):
-    firebase_obj.put('/esp32/switch/','led', data)
-    print('updated')
-
-def insert(data):
-    result = firebase_obj.post('/esp32/switch/', data)
-    print(result)
-
-def remove(result):
-    firebase_obj.delete('/esp32/switch/', result)
-    print('deleted')
+def remove(child):
+    data = firebase_obj.delete('esp32/switch', child)
+    return (data, 'deleted')
 
 # def switch(argument):
 #     switcher = {
@@ -39,50 +38,51 @@ def remove(result):
 
 # output = switch(choice)
 
-if __name__ == "__main__":
-
-    print('''
-    Menu...
-
-        1: push(data)
-        2: pull()
-        3: insert(data)
-        4: remove(result)
-        0: ...Exit
-    ''')
-
-    choice = True
-    output = None
-
-    while int(choice):
-
-        try:
-            with open('data.json', 'r') as openfile:
-              data = json.load(openfile)
-        except Exception as e:
-            print('''\n   No JSON file present...
-            Try Calling Pull method.
-            ''')
-
-        choice = input('\n  Enter your Choice : ')
-
-        if choice == '1':
-            output = push(data)
-        elif choice == '2':
-            output = pull()
-        elif choice == '3':
-            output = insert(data)
-        elif choice == '4':
-            result = input('\nEnter child name : ')
-            output = remove(result)
-        else:
-            print('Exit...')
-
-        print(output)
-
-    # push(data)
-    # pull()
-
-    # result = insert(data)
-    # if input("Want to delete ? (1/0) : "):
-    #     remove(result)
+#
+# if __name__ == "__main__":
+#
+#     try:
+#         with open('data.json', 'r') as openfile:
+#           data = json.load(openfile)
+#
+#     except Exception as e:
+#         print('''\n   No JSON file present...
+#         Try Calling Pull method.
+#         ''')
+#
+#     print('''
+#     Menu...
+#
+#         1: push
+#         2: pull
+#         3: insert
+#         4: remove
+#         0: ...Exit
+#     ''')
+#
+#     choice = True
+#     output = None
+#
+#     while int(choice):
+#         choice = input('\n  Enter your Choice : ')
+#
+#         if choice == '1':
+#             output = push(data)
+#
+#         elif choice == '2':
+#             output = pull()
+#
+#         elif choice == '3':
+#             output = insert(data)
+#
+#         elif choice == '4':
+#             child = input('\nEnter child name : ')
+#             output = remove(child)
+#
+#         elif choice == '0':
+#             print('Exit...')
+#
+#         else:
+#             print('...try Again !!!')
+#
+#         print(output)

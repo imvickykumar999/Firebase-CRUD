@@ -18,11 +18,11 @@ def pull(child = 'led'):
         json.dump(result, outfile)
     return ('Value fetched = ', result)
 
-def insert(data, child = 'led'):
-    result = firebase_obj.post(f'esp32/switch/{child}', data)
+def insert(data = 'hello', child = 'switch/led'):
+    result = firebase_obj.post(f'esp32/{child}', data)
     return (result)
 
-def remove(child):
+def remove(child = 'led'):
     data = firebase_obj.delete('esp32/switch', child)
     return (data, 'deleted')
 

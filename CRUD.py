@@ -1,9 +1,16 @@
-# https://www.c-sharpcorner.com/article/firebase-crud-operations-using-python/
+# Firebase CRUD Tutorial : https://www.c-sharpcorner.com/article/firebase-crud-operations-using-python/
 
-# https://console.firebase.google.com/u/0/project/home-automation-336c0/database/home-automation-336c0-default-rtdb/data/~2F
+# Create NEW Project : https://console.firebase.google.com/
+
+# My Home Automation Project : https://console.firebase.google.com/u/0/project/home-automation-336c0/database/home-automation-336c0-default-rtdb/data/~2F
 
 from imvickykumar999 import firebase
-import json
+import json, os
+
+try:
+    os.mkdir('json')
+except Exception as e:
+    print(e)
 
 firebase_obj = firebase.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
 
@@ -14,7 +21,7 @@ def push(data, child = 'led'):
 def pull(child = 'led'):
     result = firebase_obj.get(f'esp32/switch/{child}', None)
 
-    with open(f"{child}.json", "w") as outfile:
+    with open(f"json/{child}.json", "w") as outfile:
         json.dump(result, outfile)
     return ('Value fetched = ', result)
 

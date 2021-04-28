@@ -14,7 +14,8 @@ except Exception as e:
 
 firebase_obj = f.FirebaseApplication('https://home-automation-336c0-default-rtdb.firebaseio.com/', None)
 
-def push(data, child = 'led'):
+def push(data = {"Name": "LED", "Switch": "ON", "Value": 1},
+         child = 'led'):
     firebase_obj.put('esp32/switch', child, data)
     return ('updated')
 
